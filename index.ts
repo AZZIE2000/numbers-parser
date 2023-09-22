@@ -28,3 +28,4 @@ const extractNumbers = (input: string) => {
 
 console.log(extractNumbers(input));
 // output: 1 tickets 1 kids 3 and 5 five
+// By Azzam Faraj
