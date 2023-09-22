@@ -31,14 +31,14 @@ const extractNumbers = (input: string) => {
 // output: 1 tickets 1 kids 3 and 5 five
 // By Azzam Faraj
 
-const run = (text: string) => {
+const extractTickets = (text: string) => {
   const members = {
     adults: 0,
     children: 0,
     disabled: 0,
   };
   const tokenizedText = text.split(" ");
-  for (var i = 0; i < tokenizedText.length; i++) {
+  for (var i = 0; i < tokenizedText?.length; i++) {
     const word = tokenizedText[i];
     if (isNaN(parseInt(word)) && tokenizedText[i + 1] !== "for") {
       if (word === "for") {
@@ -75,31 +75,7 @@ const run = (text: string) => {
         }
       }
     }
-  
   }
   return members;
 };
 
-console.log("-----------------");
-console.log("-----------------");
-console.log("-----------------");
-let input = " two for children and one for an adult";
-console.log(input);
-console.log(run(extractNumbers(input)));
-console.log("-----------------");
-let input11 = " two for children ";
-console.log(input11);
-console.log(run(extractNumbers(input11)));
-console.log("-----------------");
-let input2 = " تذكرتين";
-console.log(input2);
-console.log(run(extractNumbers(input2)));
-console.log("-----------------");
-let input3 = " تذكرة واحدة";
-console.log(input3);
-console.log(run(extractNumbers(input3)));
-console.log("-----------------");
-let input4 = "تذاكز";
-console.log(input4);
-console.log(run(extractNumbers(input4)));
-console.log("-----------------");
